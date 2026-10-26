@@ -102,3 +102,9 @@ body{background:var(--paper)}
 @media (max-width:900px){.dots.five{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.hero{padding:80px 16px 60px}}
 @media (max-width:640px){#heroCollage .circ{display:none}.spaced::after{display:none}}
+/* phones: taller collage boxes, no drift, smaller captions */
+@media (max-width:640px){
+  .band{height:600px}.band.tall{height:760px}.strip-photos{height:420px}
+  .ph figcaption{font-size:9px;max-width:94%;left:4px;bottom:4px;padding:2px 4px}
+  .boxlabel{font-size:14px;padding:7px 10px}
+}

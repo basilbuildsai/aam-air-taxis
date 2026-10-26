@@ -73,7 +73,7 @@ export function build(layout) {
 function parallax() {
   document.querySelectorAll('.ph:not(.pre)').forEach(p => {
     const host = p.parentElement, r = host.getBoundingClientRect();
-    const off = reduce ? 0 : (r.top + r.height / 2 - innerHeight / 2) * +p.dataset.speed;
+    const off = reduce || innerWidth < 700 ? 0 : (r.top + r.height / 2 - innerHeight / 2) * +p.dataset.speed;
     p.style.transform = `translateY(${off.toFixed(1)}px) rotate(${p.dataset.rot}deg)`;
   });
 }

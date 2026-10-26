@@ -1,8 +1,8 @@
 // v2 public explainer: collage bands, HTML charts that animate in, robotaxi grid toggle. No 3D.
-import { build, newsprint, setImgBase } from './collage.js?v=3';
-import { LAYOUT, HEADS } from './layout.js?v=3';
-import { LAYOUT2 } from './layout2.js?v=3';
-import { VOT, grid, range } from './extra.js?v=3';
+import { build, newsprint, setImgBase } from './collage.js?v=4';
+import { LAYOUT, HEADS } from './layout.js?v=4';
+import { LAYOUT2 } from './layout2.js?v=4';
+import { VOT, grid, range } from './extra.js?v=4';
 
 setImgBase('img/');
 newsprint(document.querySelector('.news'), HEADS);
