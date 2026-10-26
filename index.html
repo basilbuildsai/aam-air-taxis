@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Arimo:wght@400;500;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="styles.css?v=4">
-<link rel="stylesheet" href="v2.css?v=4">
+<link rel="stylesheet" href="styles.css?v=7">
+<link rel="stylesheet" href="v2.css?v=7">
 </head>
 <body>
 <div class="grain" aria-hidden="true"></div>
@@ -100,6 +100,12 @@
 <section class="prose screen" id="trip">
   <p class="lead">An air taxi flies pad to pad. The US has only <strong>49</strong> public heliports that are not at hospitals, and fewer than <strong>2 in 100</strong> people in the 20 largest metro areas live within two miles of one.</p>
   <p>So most trips start with a drive to the pad, then about 15 minutes of check-in, a short flight, and another ride at the other end. We timed it with real New York taxi data.</p>
+  <figure class="routemap" id="routeMap">
+    <figcaption>Two ways from Times Square to JFK<small>Evening rush, typical weekday. Uber the whole way, or a ride to the heliport, a flight, and a car from the helicopter to the terminal.</small></figcaption>
+    <div class="mapsvg" data-src="map_jfk_route.svg"></div>
+    <ul class="key"><li><i class="s-car"></i>Uber, 75 minutes</li><li><i class="s-road"></i>Car to the heliport, then from the landing pad to Terminal 4</li><li><i class="s-fly dash"></i>Helicopter or air taxi, about 7 minutes in the air</li></ul>
+    <p class="mapnote">The flight line is a sketch, not the real flight path. Shorelines from NYC Taxi and Limousine Commission zones and the US Census Bureau. Roads &copy; OpenStreetMap contributors (ODbL), routed with OSRM.</p>
+  </figure>
   <figure class="trip" id="tripChart">
     <figcaption>Times Square to JFK, door to door<small>Typical weekday trip in minutes, from New York City taxi records, March to August 2026</small></figcaption>
     <div class="tp"><h4>Evening rush</h4>
@@ -118,7 +124,8 @@
 
 <section class="prose screen" id="car">
   <h2 class="cond">America is <span class="brush">built for the car</span></h2>
-  <p class="lead">When the 1920 census first counted more Americans in towns and cities than in the countryside, the country already had <strong>8 million</strong> registered cars.</p>
+  <p class="lead">When the 1920 census first counted more Americans in towns and cities than in the countryside, the country already had <strong>8 million</strong> registered cars. In 1956 Congress paid for the Interstate highways, about <strong>41,000 miles</strong> of them.</p>
+  <div class="band" id="interstateMap" aria-hidden="true"></div>
   <div class="statrow">
     <div class="stat"><span class="num">9 in 10</span><span class="lbl">people who travel to work go by car<br><em>Census, 2024</em></span></div>
     <div class="stat"><span class="num">87%</span><span class="lbl">of all daily trips are made by car<br><em>Federal travel survey, 2022</em></span></div>
@@ -127,12 +134,13 @@
   <div class="band" id="carBand" aria-hidden="true"></div>
   <p>An air taxi is not replacing a train. It is replacing a car the rider already owns, parked outside, that goes door to door. Every air-taxi trip still starts and ends in one.</p>
   <p>New York is the exception, and it is where Joby and Archer plan to start. Only <strong>29%</strong> of New York City commuters go by car. In Dallas, Phoenix and Charlotte more than <strong>90%</strong> drive.</p>
-  <p class="fine">Census urban population tables 1920 to 2020; FHWA vehicle registrations; American Community Survey 2024, table B08301; FHWA National Household Travel Survey 2022, table 4-2.</p>
+  <p class="fine">Census urban population tables 1920 to 2020; FHWA vehicle registrations; National Archives, Federal-Aid Highway Act of 1956; American Community Survey 2024, table B08301; FHWA National Household Travel Survey 2022, table 4-2.</p>
 </section>
 
 <section class="prose screen" id="robotaxi">
   <h2 class="cond">The next rival <span class="brush">drives itself</span></h2>
   <p class="lead">Driverless taxis go door to door. At Waymo's published Las Vegas prices, a 20-mile trip costs about <strong>$54</strong>. The same trip by air taxi, with a ride to and from the pads, costs <span class="mark">$105 to $132</span>.</p>
+  <div class="band" id="robotaxiBand" aria-hidden="true"></div>
   <figure class="vot v2" id="vot">
     <figcaption>What your time must be worth for the air taxi to pay off<small>Dollars per hour, by trip length and how far the nearest pad is from each end</small></figcaption>
     <div class="toggle" role="group" aria-label="Road conditions"><button type="button" data-set="us" aria-pressed="true">Typical US roads</button><button type="button" data-set="nyc" aria-pressed="false">New York traffic</button></div>
@@ -240,6 +248,6 @@
   <p class="fine">Hovecon · October 2026</p>
 </section>
 
-<script type="module" src="js/main.js?v=4"></script>
+<script type="module" src="js/main.js?v=7"></script>
 </body>
 </html>

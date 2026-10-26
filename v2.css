@@ -108,3 +108,32 @@ body{background:var(--paper)}
   .ph figcaption{font-size:9px;max-width:94%;left:4px;bottom:4px;padding:2px 4px}
   .boxlabel{font-size:14px;padding:7px 10px}
 }
+/* route map */
+.routemap{max-width:980px!important;margin:44px auto 20px!important;background:var(--mint-2);padding:26px 28px 20px;border-top:1.5px solid var(--rule)}
+.routemap figcaption{font-size:21px;line-height:1.2;margin-bottom:14px}
+.routemap figcaption small{font-size:14px}
+.mapsvg svg{width:100%;height:auto;display:block}
+.mapsvg .water{fill:#CFDDD8}
+.mapsvg .land path{fill:var(--paper-2);stroke:#B9C2BD;stroke-width:.8}
+.mapsvg .rt{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.mapsvg .car,.mapsvg .road{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.4s ease}
+.mapsvg .car{stroke:#7A7F7C;stroke-width:5}
+.mapsvg .road{stroke:var(--teal);stroke-width:5}
+.mapsvg .a3{transition-delay:2.2s}
+.mapsvg .fly{stroke:var(--coral);stroke-width:4;stroke-dasharray:10 8;opacity:0;transition:opacity .8s 1.4s}
+.routemap.in .car,.routemap.in .road{stroke-dashoffset:0}
+.routemap.in .fly{opacity:1}
+.mapsvg .pin{fill:var(--ink);stroke:var(--paper-2);stroke-width:2.5}
+.mapsvg .pin.pad{fill:var(--coral)}
+.mapsvg .lbl{font:700 17px var(--sans);fill:var(--ink);paint-order:stroke;stroke:var(--paper-2);stroke-width:4px}
+.mapsvg .area{font:700 13px var(--mono);letter-spacing:.2em;fill:#9DA3A0}
+.routemap .key{list-style:none;display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:var(--ink-2);margin-top:12px}
+.routemap .key i{display:inline-block;width:18px;height:5px;vertical-align:3px;margin-right:6px}
+.routemap .key i.dash{background:repeating-linear-gradient(90deg,var(--coral) 0 6px,transparent 6px 10px)}
+.mapnote{font-size:12px!important;color:var(--muted)!important;margin:8px 0 0!important}
+@media (max-width:720px){.routemap{padding:18px 12px}.mapsvg .lbl{font-size:24px}.mapsvg .area{font-size:18px}}
+/* the 1957 Interstate map as a clean paper document, not halftoned */
+#interstateMap{height:auto;aspect-ratio:1.5;max-width:980px!important}
+.ph.plain::after{display:none}
+.ph.plain img{filter:grayscale(1) contrast(1.15);object-fit:contain;background:#fff}
+#carBand{margin-top:80px!important}

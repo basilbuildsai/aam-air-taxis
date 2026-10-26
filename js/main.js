@@ -1,10 +1,14 @@
 // v2 public explainer: collage bands, HTML charts that animate in, robotaxi grid toggle. No 3D.
-import { build, newsprint, setImgBase } from './collage.js?v=4';
-import { LAYOUT, HEADS } from './layout.js?v=4';
-import { LAYOUT2 } from './layout2.js?v=4';
-import { VOT, grid, range } from './extra.js?v=4';
+import { build, newsprint, setImgBase } from './collage.js?v=7';
+import { LAYOUT, HEADS } from './layout.js?v=7';
+import { LAYOUT2 } from './layout2.js?v=7';
+import { VOT, grid, range } from './extra.js?v=7';
 
-setImgBase('img/');
+const IMG = 'img/';
+setImgBase(IMG);
+
+// inline the route map so its lines can draw in
+document.querySelectorAll('.mapsvg').forEach(async m => { m.innerHTML = await (await fetch(IMG + m.dataset.src)).text(); });
 newsprint(document.querySelector('.news'), HEADS);
 build({ ...LAYOUT, ...LAYOUT2 });
 
@@ -22,7 +26,7 @@ range(document.getElementById('costRange'));
 
 // reveal charts, dated lists and timelines as they scroll in
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .3 });
-document.querySelectorAll('.wfall, .cmp, .trip, .vot, .range, .slip, .dots li').forEach(n => io.observe(n));
+document.querySelectorAll('.wfall, .cmp, .trip, .routemap, .vot, .range, .slip, .dots li').forEach(n => io.observe(n));
 document.querySelectorAll('.slip li, .dots li').forEach((li, i) => { li.style.transitionDelay = `${(i % 5) * 150}ms`; });
 
 // reading progress
